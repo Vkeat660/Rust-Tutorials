@@ -8,12 +8,23 @@ impl Philosopher {
             name: name.to_string(),
         }
     }
+
+    fn eat(&self) {
+        println!("{} is done eating.", self.name);
+    }
 }
 
 fn main() {
-    let p1 = Philosopher::new("Baruch Spinoza");
-    let p2 = Philosopher::new("Gilles Deleuze");
-    let p3 = Philosopher::new("Karl Marx");
-    let p4 = Philosopher::new("Friedrich Nietzsche");
-    let p5 = Philosopher::new("Michel Foucault");
+    
+    let philosophers = vec![
+         Philosopher::new("Baruch Spinoza"),
+         Philosopher::new("Gilles Deleuze"),
+         Philosopher::new("Karl Marx"),
+         Philosopher::new("Friedrich Nietzsche"),
+         Philosopher::new("Michel Foucault"),
+    ];
+
+    for p in &philosophers {
+        p.eat();
+    }
 }
